@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+
+  <script src="./libraries/d3.v3.min.js"></script>
+  <script src="./libraries/queue.v1.min.js"></script>
+
+  <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
+
+  <link href='./css/style.css' rel='stylesheet' />
+
+</head>
+
+<body>
+
+  <div id="pageContainer" style="font-family: Helvetica, Arial, sans-serif;position:absolute;top:0;right:0;bottom:0;left:0;">
+<!--
+    <div id="header">
+      <a href="http://americanredcross.github.io"><img id="logo" src="logo.png"/></a>
+      <h1 id="siteTitle">
+        <span class="heavier">Country Risk Level Scores</span> from 2016 INFORM World Index
+      </h1>
+    </div>
+-->
+    <div id="visualContainer" style="position:absolute; top:1em; bottom:0; width:100%">
+      <div id="svgContainer" style="position: absolute; top: 0; bottom: 0; left: 0; right: 50%;">
+        <div style="position: absolute; left: 0; right: 1em; height: 3em; width: 100%; text-align: center;">
+          <div id="countryEscapeButton"><img src="./img/close-x.png" class="button" id="close-x" style="height: 100%" /></div>
+          <h1 id="countryTitle"></h1>
+        </div>
+        <div id="svg" style="position: absolute; top: 3em; bottom: 3em; left: 0%; right: 0%;">
+          <h2 class="instructions">select a country on the map</h2>
+          <div id="metricScores" style="position: absolute; left: 30%; right: 30%; top: 26%; bottom: 0%; text-align: center;">
+            <p id="thisMetricParentParentParent" class="parentToMetric" style="font-size: 0.6em; color: #bbb;"></p>
+            <p id="thisMetricParentParent" class="parentToMetric" style="font-size: 0.7em; color: #999;"></p>
+            <p id="thisMetricParent" class="parentToMetric" style="font-size: 0.8em; color: #6d6e70;"></p>
+            <div id="back-button-container"><img src="./img/back-arrow.png" class="button" id="back-button" style="height: 100%;" /></div>
+            <p id="thisMetric" style="font-size: 1.2em; color: #3e5255; padding-top: 0; margin-bottom: 0em; margin-top: 0em;"></p>
+            <p id="countryRankingLabel"  style="font-size: 0.85em; color: #567175; font-style: italic; margin-top: 0.5em; width: 70%; margin-left: 15%;"></p>
+          </div>
+        </div>
+        <div id="footer" style="position: absolute; bottom: 0; height: 3em; left: 0; right: 0; padding-right: 2.5em;">
+          <p class="link" style="font-size: 1em; float:left; margin: 0; padding-top:1em; padding-left:8em;">
+            <a href="http://americanredcross.github.io/inform-risk-visualization" target="_blank" style="text-decoration: none; color: #6d6e70;">Data visualization courtesy of </a>
+          </p>
+          <a href="http://americanredcross.github.io" target="_blank"><img id="logo" src="./img/logo.png"/></a>
+        </div>
+      </div>
+      <div id="mapContainer" style="position: absolute; bottom: 1em; top:0; left: 50%; right: 1em;">
+        <div id="legend" style="position: absolute; left: 7%; right: 7%; top: 0.5em; height: 2em; border-style: solid; border-width: 0.1em; border-color: #6d6e70;">
+          <div id="legendLowRisk" style="position: absolute; left: 0.3em; right: 50%; top: 0.5em; bottom: 0; text-align: left; color: #000;">0.0 - Low Risk</div>
+          <div id="legendHighRisk" style="position: absolute; left: 50%; right: 0.3em; top: 0.5em; bottom: 0; text-align: right; color: #fff;">High Risk - 10.0</div>
+        </div>
+        <div id="map" style="position: absolute; top: 5em; bottom: 0; width: 100%; border-style: solid; border-width: 0.1em; border-color: #6d6e70;"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src='./js/field-hierarchy.js'></script>
+  <script src='./js/countries.js'></script>
+  <script src='./js/rankings.js'></script>
+  <script src='./js/app.js'></script>
+
+</body>
