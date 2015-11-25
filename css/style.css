@@ -67,9 +67,9 @@
   font-style: italic;
   font-weight: lighter;
   font-size: 3em;
-  padding: 2em;
-  height: 100%;
-
+  /*padding: 2em;*/
+  /*height: 100%;*/
+  width: 100%;
 }
 
 #countryEscapeButton {
