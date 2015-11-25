@@ -297,7 +297,7 @@ function ready(error, risk) {
       ).append("span").text(padDecimal(selectedMetricValue));
 
       document.getElementById("countryRankingLabel")
-        .innerHTML = "Ranks " + findRank(selectedCountry).GLOBE + " out of " + rankings.GLOBE.length + ".";
+        .innerHTML = "Ranks " + risk[selectedCountryIndex]["Rank"] + " out of " + rankings.GLOBE.length + ".";
 
       if (parentMetric(selectedMetric)) {
 
