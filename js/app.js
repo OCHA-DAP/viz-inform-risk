@@ -106,7 +106,7 @@ var parentMetric = function(metric) {
 
 // Load data
 queue()
-    .defer(d3.csv, "INFORM_Mid2018_v034.csv")
+    .defer(d3.csv, "inform_gri_2020_v040.csv")
     .await(ready);
 
 // READY
